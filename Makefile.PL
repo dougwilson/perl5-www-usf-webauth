@@ -1,5 +1,8 @@
 use inc::Module::Install;
 
+use Module::Install::AuthorRequires 0.02;
+use Module::Install::AuthorTests 0.002;
+
 name     'WWW-USF-WebAuth';
 all_from 'lib/WWW/USF/WebAuth.pm';
 author   'Douglas Christopher Wilson <doug@somethingdoug.com>';
@@ -19,29 +22,15 @@ requires
 	'URI'                       => 0,
 	'namespace::clean'          => '0.04';
 
-# Modules that are required for tests
+# Modules that are required for tests in t/
 test_requires
-	'Test::Class'     => '0.33',
-	'Test::Command'   => '0.08',
 	'Test::Exception' => '0.03',
-	'Test::More'      => '0.94',
-	'Test::Requires'  => '0.02';
+	'Test::More'      => 0;
 
-# Modules that are required for author tests
+# Modules that are required for tests in xt/
 author_requires
-	'File::Spec'                      => 0,
-	'Module::Install'                 => '0.91',
-	'Module::Install::AuthorRequires' => '0.02',
-	'Module::Install::AuthorTests'    => '0.002',
-	'Pod::Coverage'                   => '0.18',
-	'Test::CleanNamespaces'           => 0,
-	'Test::ConsistentVersion'         => 0,
-	'Test::DistManifest'              => 0,
-	'Test::MinimumVersion'            => '0.009',
-	'Test::Perl::Critic'              => '1.01',
-	'Test::Pod'                       => '1.22',
-	'Test::Pod::Content'              => 0,
-	'Test::Pod::Coverage'             => '1.08';
+	'Test::More'                      => 0,
+	'Test::Requires'                  => '0.02';
 
 # Enable tests to be in multi-level directories
 tests_recursive;
