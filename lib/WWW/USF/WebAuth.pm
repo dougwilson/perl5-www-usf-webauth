@@ -66,21 +66,29 @@ Version 0.002
 
 =head1 SYNOPSIS
 
+  use Carp ();
+  use WWW::USF::WebAuth ();
+
+  # Create a new WebAuth object
   my $webauth = WWW::USF::WebAuth->new(
       netid    => 'teststudent',
       password => 'PassW0rd!',
   );
 
   my $response = $webauth->authenticate(
-      service => 'https://my.usf.edu/webapps/login/'
+      # Connect to USF Blackboard system
+      service => 'https://learn.usf.edu/webapps/login/?new_loc=useCas'
   );
 
   if (!$response->is_success) {
-      die 'Authentication with WebAuth failed';
-   }
+      # Authentication failed, so just bail here
+      Carp::carp('Authentication with WebAuth failed');
+  }
 
   # The authentication was successful
-  print $response->destination, "\n";
+  printf qq{You may navigate to %s and be logged in as %s\n},
+      $response->destination,
+      $webauth->netid;
 
 =head1 DESCRIPTION
 
