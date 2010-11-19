@@ -24,12 +24,11 @@ provides:
     file: lib/WWW/USF/WebAuth.pm
     version: 0.002
 requires:
-  Authen::CAS::External: 0.03
+  Authen::CAS::External: 0.05
   Moose: 0.89
   MooseX::Aliases: 0.05
-  MooseX::StrictConstructor: 0.08
+  MooseX::StrictConstructor: 0.09
   MooseX::Types: 0.08
-  URI: 0
   namespace::clean: 0.04
   perl: 5.008003
 resources:

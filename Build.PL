@@ -33,12 +33,11 @@ my $build = Module::Build->new(
 	# Module that are required
 	requires => {
 		'perl'                      => '5.008003',
-		'Authen::CAS::External'     => '0.03',
+		'Authen::CAS::External'     => '0.05',
 		'Moose'                     => '0.89',
 		'MooseX::Aliases'           => '0.05',
-		'MooseX::StrictConstructor' => '0.08',
+		'MooseX::StrictConstructor' => '0.09',
 		'MooseX::Types'             => '0.08',
-		'URI'                       => 0,
 		'namespace::clean'          => '0.04',
 	},
 
