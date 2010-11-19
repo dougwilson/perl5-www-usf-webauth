@@ -9,7 +9,7 @@ use Test::More;
 use Test::Requires 0.02;
 
 # Only authors test the Kwalitee (except for CPANTS, of course :)
-plan skip_all => 'Set TEST_AUTHOR to test the Kwalitee'
+plan skip_all => 'Set TEST_AUTHOR to enable this test'
 	unless $ENV{'TEST_AUTHOR'} || -e 'inc/.author';
 
 # Required modules for this test
