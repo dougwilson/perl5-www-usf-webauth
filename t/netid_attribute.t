@@ -24,3 +24,5 @@ $webauth->clear_netid;
 
 ok !$webauth->has_netid   , 'No longer has NetID';
 ok !$webauth->has_username, 'No longer has username';
+
+exit 0;
