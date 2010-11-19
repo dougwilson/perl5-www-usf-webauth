@@ -1,11 +1,36 @@
-#!perl -T
+#!/usr/bin/env perl
 
-use Test::More tests => 1;
+use 5.008003;
+use strict;
+use warnings 'all';
 
-BEGIN {
-	use_ok('WWW::USF::WebAuth');
+use Test::More; # Will plan tests later
+
+# Modules in this distribution
+my @module = qw(
+	WWW::USF::WebAuth
+);
+
+# Modules to print the version number of
+my @display = qw(
+	Moose
+	Class::MOP
+	Authen::CAS::External
+);
+
+# Show perl version in test output
+diag(sprintf 'Perl %s', $]);
+
+for my $module (@display) {
+	my $version = eval qq{require $module; \$${module}::VERSION};
+	diag($@ ? $@ : "$module $version");
 }
 
-diag("Perl $], $^X");
-diag("WWW::USF::WebAuth " . WWW::USF::WebAuth->VERSION);
-diag("Authen::CAS::External " . Authen::CAS::External->VERSION);
+# Plan the tests for the number of modules
+plan tests => scalar @module;
+
+for my $module (@module) {
+	use_ok($module) or BAIL_OUT("Unable to load $module");
+}
+
+exit 0;
