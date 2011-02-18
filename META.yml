@@ -25,7 +25,7 @@ provides:
     version: 0.003
 requires:
   Authen::CAS::External: 0.05
-  Moose: 0.89
+  Moose: 1.03
   MooseX::Aliases: 0.05
   MooseX::StrictConstructor: 0.09
   MooseX::Types: 0.08

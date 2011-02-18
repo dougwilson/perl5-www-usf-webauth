@@ -34,7 +34,7 @@ my $build = Module::Build->new(
 	requires => {
 		'perl'                      => '5.008003',
 		'Authen::CAS::External'     => '0.05',
-		'Moose'                     => '0.89',
+		'Moose'                     => '1.03',
 		'MooseX::Aliases'           => '0.05',
 		'MooseX::StrictConstructor' => '0.09',
 		'MooseX::Types'             => '0.08',
@@ -53,3 +53,4 @@ my $build = Module::Build->new(
 $build->create_build_script;
 
 exit 0;
+
