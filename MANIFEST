@@ -1,5 +1,6 @@
 Build.PL
 Changes
+ex/check_login.pl
 lib/WWW/USF/WebAuth.pm
 LICENSE
 MANIFEST			This list of files
