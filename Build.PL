@@ -30,10 +30,16 @@ my $build = Module::Build->new(
 		'Test::Requires'            => '0.02',
 	},
 
+	# Modules that are required for configuration (this file)
+	configure_requires => {
+		'Module::Build' => '0.31',
+	},
+
 	# Module that are required
 	requires => {
 		'perl'                      => '5.008003',
 		'Authen::CAS::External'     => '0.05',
+		'LWP::Protocol::https'      => 0,
 		'Moose'                     => '1.03',
 		'MooseX::Aliases'           => '0.05',
 		'MooseX::StrictConstructor' => '0.09',
