@@ -1,6 +1,10 @@
 Revision history for WWW-USF-WebAuth
 ====================================
 
+0.003 Sun, November 21, 2010 00:51:22 -0500
+  * Fix the POD tests in `xt/` to work when the POD modules are not
+    installed.
+
 0.002 Fri, November 19, 2010 15:07:42 -0500
   * Removed dependency on `URI` and need at least 0.05 of
     `Authen::CAS::External`.

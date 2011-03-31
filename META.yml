@@ -22,7 +22,7 @@ no_index:
 provides:
   WWW::USF::WebAuth:
     file: lib/WWW/USF/WebAuth.pm
-    version: 0.002
+    version: 0.003
 requires:
   Authen::CAS::External: 0.05
   Moose: 0.89
@@ -35,4 +35,4 @@ resources:
   homepage: http://github.com/dougwilson/perl5-www-usf-webauth/
   license: http://dev.perl.org/licenses/
   repository: git://github.com/dougwilson/perl5-www-usf-webauth.git
-version: 0.002
+version: 0.003
