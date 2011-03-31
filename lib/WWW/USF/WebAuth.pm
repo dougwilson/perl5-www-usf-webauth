@@ -46,6 +46,24 @@ alias 'has_netid'   => 'has_username';
 alias 'clear_netid' => 'clear_username';
 
 ###########################################################################
+# CONSTRUCTOR
+sub BUILDARGS {
+	my ($class, @args) = @_;
+
+	# Get the arguments as a HASHREF
+	my $args = Moose::Object->BUILDARGS(@args);
+
+	if (exists $args->{netid}) {
+		# The constructor was provided with the netid argument. Re-map it
+		# to the username argument (overwriting whatever was there).
+		$args->{username} = delete $args->{netid};
+	}
+
+	# Build all the arguments upstream
+	return $class->SUPER::BUILDARGS($args);
+}
+
+###########################################################################
 # MAKE MOOSE OBJECT IMMUTABLE
 __PACKAGE__->meta->make_immutable;
 

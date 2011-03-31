@@ -4,11 +4,8 @@ author:
   - 'Douglas Christopher Wilson <doug@somethingdoug.com>'
 build_requires:
   ExtUtils::MakeMaker: 6.42
-  Test::Class: 0.33
-  Test::Command: 0.08
   Test::Exception: 0.03
-  Test::More: 0.94
-  Test::Requires: 0.02
+  Test::More: 0
 configure_requires:
   ExtUtils::MakeMaker: 6.42
 distribution_type: module
@@ -23,6 +20,10 @@ no_index:
     - inc
     - t
     - xt
+provides:
+  WWW::USF::WebAuth:
+    file: lib/WWW/USF/WebAuth.pm
+    version: 0.001
 requires:
   Authen::CAS::External: 0.03
   Moose: 0.89

@@ -15,9 +15,11 @@ MANIFEST			This list of files
 META.yml
 README
 t/00-load.t
+t/netid_attribute.t
 xt/clean-namespaces.t
 xt/consistent-version.t
 xt/critic.t
+xt/eol.t
 xt/kwalitee.t
 xt/manifest.t
 xt/perl-version.t
