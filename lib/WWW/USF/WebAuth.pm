@@ -1,43 +1,31 @@
 package WWW::USF::WebAuth;
 
-use 5.008001;
+use 5.008003;
 use strict;
 use warnings 'all';
 
-###########################################################################
 # METADATA
 our $AUTHORITY = 'cpan:DOUGDUDE';
-our $VERSION   = '0.001';
+our $VERSION   = '0.002';
 
-###########################################################################
 # MOOSE
-use Moose 0.89;
+use Moose 1.03;
 use MooseX::Aliases 0.05;
-use MooseX::StrictConstructor 0.08;
+use MooseX::StrictConstructor 0.09;
 
-###########################################################################
 # MOOSE TYPES
-use MooseX::Types::Moose qw(
-	Str
-);
+use MooseX::Types::Moose qw(Str);
 
-###########################################################################
-# MODULE IMPORTS
-use URI;
-
-###########################################################################
 # ALL IMPORTS BEFORE THIS WILL BE ERASED
 use namespace::clean 0.04 -except => [qw(meta)];
 
-###########################################################################
 # MOOSE PARENT CLASSES
-extends 'Authen::CAS::External';
+extends 'Authen::CAS::External' => {-version => '0.05'};
 
-###########################################################################
 # ATTRIBUTES
 has '+cas_url' => (
-	# Add the default URL
-	default => sub { URI->new('https://webauth.usf.edu') },
+	# Add the default URL to be WebAuth
+	default => 'https://webauth.usf.edu',
 );
 
 # Setup an alias for netid to be the same as username
@@ -45,13 +33,12 @@ alias 'netid'       => 'username';
 alias 'has_netid'   => 'has_username';
 alias 'clear_netid' => 'clear_username';
 
-###########################################################################
 # CONSTRUCTOR
-sub BUILDARGS {
-	my ($class, @args) = @_;
+around BUILDARGS => sub {
+	my ($orig, $class, @args) = @_;
 
 	# Get the arguments as a HASHREF
-	my $args = Moose::Object->BUILDARGS(@args);
+	my $args = $class->$orig(@args);
 
 	if (exists $args->{netid}) {
 		# The constructor was provided with the netid argument. Re-map it
@@ -59,11 +46,9 @@ sub BUILDARGS {
 		$args->{username} = delete $args->{netid};
 	}
 
-	# Build all the arguments upstream
-	return $class->SUPER::BUILDARGS($args);
-}
+	return $args;
+};
 
-###########################################################################
 # MAKE MOOSE OBJECT IMMUTABLE
 __PACKAGE__->meta->make_immutable;
 
@@ -77,25 +62,33 @@ WWW::USF::WebAuth - Access to USF's WebAuth system
 
 =head1 VERSION
 
-Version 0.001
+Version 0.002
 
 =head1 SYNOPSIS
 
+  use Carp ();
+  use WWW::USF::WebAuth ();
+
+  # Create a new WebAuth object
   my $webauth = WWW::USF::WebAuth->new(
       netid    => 'teststudent',
       password => 'PassW0rd!',
   );
 
   my $response = $webauth->authenticate(
-      service => 'https://my.usf.edu/webapps/login/'
+      # Connect to USF Blackboard system
+      service => 'https://learn.usf.edu/webapps/login/?new_loc=useCas'
   );
 
   if (!$response->is_success) {
-      die 'Authentication with WebAuth failed';
-   }
+      # Authentication failed, so just bail here
+      Carp::carp('Authentication with WebAuth failed');
+  }
 
   # The authentication was successful
-  print $response->destination, "\n";
+  printf qq{You may navigate to %s and be logged in as %s\n},
+      $response->destination,
+      $webauth->netid;
 
 =head1 DESCRIPTION
 
@@ -134,17 +127,15 @@ This will report if the current instance has L</netid> defined.
 
 =over 4
 
-=item * L<Authen::CAS::External> 0.03
+=item * L<Authen::CAS::External> 0.05
 
-=item * L<Moose> 0.89
+=item * L<Moose> 1.03
 
 =item * L<MooseX::Aliases> 0.05
 
-=item * L<MooseX::StrictConstructor> 0.08
+=item * L<MooseX::StrictConstructor> 0.09
 
 =item * L<MooseX::Types::Moose>
-
-=item * L<URI>
 
 =item * L<namespace::clean> 0.04
 

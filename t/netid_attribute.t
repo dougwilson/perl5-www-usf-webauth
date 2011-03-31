@@ -1,7 +1,7 @@
 #!perl -T
 
 use Test::More tests => 7;
-use Test::Exception 0.03;
+use Test::Fatal;
 
 use WWW::USF::WebAuth;
 
@@ -9,8 +9,8 @@ use WWW::USF::WebAuth;
 my $webauth;
 
 # Make sure the constructor takes the NetID
-lives_ok { $webauth = WWW::USF::WebAuth->new(netid => 'anything'); }
-	'Constructor takes netid attribute';
+ok(!exception { $webauth = WWW::USF::WebAuth->new(netid => 'anything'); },
+	'Constructor takes netid attribute');
 
 # Check has_*
 ok $webauth->has_netid   , 'has_netid works';
@@ -24,3 +24,5 @@ $webauth->clear_netid;
 
 ok !$webauth->has_netid   , 'No longer has NetID';
 ok !$webauth->has_username, 'No longer has username';
+
+exit 0;

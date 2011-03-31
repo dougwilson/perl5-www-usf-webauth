@@ -3,13 +3,12 @@ abstract: "Access to USF's WebAuth system"
 author:
   - 'Douglas Christopher Wilson <doug@somethingdoug.com>'
 build_requires:
-  ExtUtils::MakeMaker: 6.42
-  Test::Exception: 0.03
+  Test::Fatal: 0
   Test::More: 0
+  Test::Requires: 0.02
 configure_requires:
-  ExtUtils::MakeMaker: 6.42
-distribution_type: module
-generated_by: 'Module::Install version 0.91'
+  Module::Build: 0.36
+generated_by: 'Module::Build version 0.3607'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -23,18 +22,17 @@ no_index:
 provides:
   WWW::USF::WebAuth:
     file: lib/WWW/USF/WebAuth.pm
-    version: 0.001
+    version: 0.002
 requires:
-  Authen::CAS::External: 0.03
+  Authen::CAS::External: 0.05
   Moose: 0.89
   MooseX::Aliases: 0.05
-  MooseX::StrictConstructor: 0.08
+  MooseX::StrictConstructor: 0.09
   MooseX::Types: 0.08
-  URI: 0
   namespace::clean: 0.04
-  perl: 5.8.1
+  perl: 5.008003
 resources:
   homepage: http://github.com/dougwilson/perl5-www-usf-webauth/
   license: http://dev.perl.org/licenses/
   repository: git://github.com/dougwilson/perl5-www-usf-webauth.git
-version: 0.001
+version: 0.002
