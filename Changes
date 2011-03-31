@@ -1,5 +1,12 @@
 Revision history for WWW-USF-WebAuth
 ====================================
 
-0.001 Wed, January 20, 2012 17:18:19 -0500
+0.002 Fri, November 19, 2010 15:07:42 -0500
+  * Removed dependency on `URI` and need at least 0.05 of
+    `Authen::CAS::External`.
+  * Change from `Module::Install` system to `Module::Build`.
+  * Fix constructor to work with children classes.
+  * Change from `Test::Exception` to `Test::Fatal`.
+
+0.001 Wed, January 20, 2010 17:18:19 -0500
   * First release.
