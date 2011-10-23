@@ -6,7 +6,7 @@ use warnings 'all';
 
 # METADATA
 our $AUTHORITY = 'cpan:DOUGDUDE';
-our $VERSION   = '0.003';
+our $VERSION   = '0.003001';
 
 # MOOSE
 use Moose 1.03;
@@ -62,7 +62,7 @@ WWW::USF::WebAuth - Access to USF's WebAuth system
 
 =head1 VERSION
 
-Version 0.003
+This documentation refers to version 0.003001
 
 =head1 SYNOPSIS
 

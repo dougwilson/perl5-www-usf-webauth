@@ -49,7 +49,7 @@
    "provides" : {
       "WWW::USF::WebAuth" : {
          "file" : "lib/WWW/USF/WebAuth.pm",
-         "version" : "0.003"
+         "version" : "0.003001"
       }
    },
    "release_status" : "stable",
@@ -62,5 +62,5 @@
          "url" : "git://github.com/dougwilson/perl5-www-usf-webauth.git"
       }
    },
-   "version" : "0.003"
+   "version" : "0.003001"
 }

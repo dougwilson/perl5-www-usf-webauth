@@ -1,5 +1,11 @@
 Revision history for Perl 5 distribution WWW-USF-WebAuth
 
+0.003001 2011-10-23
+ [OTHER]
+ - Add dependency on LWP::Protocol::https to guarantee HTTPS support is
+   installed.
+ - Add usage example script in ex/.
+
 0.003 2010-11-21
  [BUG FIXES]
  - Fix the POD tests in xt/ to work when the POD modules are not installed.
