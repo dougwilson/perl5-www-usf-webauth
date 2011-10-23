@@ -1,16 +1,23 @@
-Revision history for WWW-USF-WebAuth
-====================================
+Revision history for Perl 5 distribution WWW-USF-WebAuth
 
-0.003 Sun, November 21, 2010 00:51:22 -0500
-  * Fix the POD tests in `xt/` to work when the POD modules are not
-    installed.
+0.003001 2011-10-23
+ [OTHER]
+ - Add dependency on LWP::Protocol::https to guarantee HTTPS support is
+   installed.
+ - Add usage example script in ex/.
 
-0.002 Fri, November 19, 2010 15:07:42 -0500
-  * Removed dependency on `URI` and need at least 0.05 of
-    `Authen::CAS::External`.
-  * Change from `Module::Install` system to `Module::Build`.
-  * Fix constructor to work with children classes.
-  * Change from `Test::Exception` to `Test::Fatal`.
+0.003 2010-11-21
+ [BUG FIXES]
+ - Fix the POD tests in xt/ to work when the POD modules are not installed.
 
-0.001 Wed, January 20, 2010 17:18:19 -0500
-  * First release.
+0.002 2010-11-19
+ [BUG FIXES]
+ - Fix constructor to work with children classes.
+
+ [OTHER]
+ - Removed dependency on URI and need at least 0.05 of Authen::CAS::External.
+ - Change from Module::Install system to Module::Build.
+ - Change from Test::Exception to Test::Fatal.
+
+0.001 2010-01-20
+ - Initial release.

@@ -6,7 +6,7 @@ use warnings 'all';
 
 # METADATA
 our $AUTHORITY = 'cpan:DOUGDUDE';
-our $VERSION   = '0.003';
+our $VERSION   = '0.003001';
 
 # MOOSE
 use Moose 1.03;
@@ -62,7 +62,7 @@ WWW::USF::WebAuth - Access to USF's WebAuth system
 
 =head1 VERSION
 
-Version 0.003
+This documentation refers to version 0.003001
 
 =head1 SYNOPSIS
 
@@ -99,11 +99,11 @@ University of South Florida.
 
 This is fully object-oriented, and as such before any method can be used, the
 constructor needs to be called to create an object to work with. Please see
-the documentation for L<Authen::CAS::External>.
+the documentation for L<Authen::CAS::External|Authen::CAS::External>.
 
 =head1 ATTRIBUTES
 
-Please see the documentation for L<Authen::CAS::External>.
+Please see the documentation for L<Authen::CAS::External|Authen::CAS::External>.
 
 =head2 netid
 
@@ -112,8 +112,9 @@ to the inherited C<username> attribute.
 
 =head1 METHODS
 
-This module provides the identical methods as L<Authen::CAS::External> and you
-should look at the documentation for the supported methods.
+This module provides the identical methods as
+L<Authen::CAS::External|Authen::CAS::External> and you should look at the
+documentation for the supported methods.
 
 =head2 clear_netid
 
@@ -127,17 +128,17 @@ This will report if the current instance has L</netid> defined.
 
 =over 4
 
-=item * L<Authen::CAS::External> 0.05
+=item * L<Authen::CAS::External|Authen::CAS::External> 0.05
 
-=item * L<Moose> 1.03
+=item * L<Moose|Moose> 1.03
 
-=item * L<MooseX::Aliases> 0.05
+=item * L<MooseX::Aliases|MooseX::Aliases> 0.05
 
-=item * L<MooseX::StrictConstructor> 0.09
+=item * L<MooseX::StrictConstructor|MooseX::StrictConstructor> 0.09
 
-=item * L<MooseX::Types::Moose>
+=item * L<MooseX::Types::Moose|MooseX::Types::Moose>
 
-=item * L<namespace::clean> 0.04
+=item * L<namespace::clean|namespace::clean> 0.04
 
 =back
 
@@ -163,13 +164,9 @@ You can also look for information at:
 
 =over 4
 
-=item * RT: CPAN's request tracker
+=item * RT: Request tracker for CPAN
 
 L<http://rt.cpan.org/NoAuth/Bugs.html?Dist=WWW-USF-WebAuth>
-
-=item * AnnoCPAN: Annotated CPAN documentation
-
-L<http://annocpan.org/dist/WWW-USF-WebAuth>
 
 =item * CPAN Ratings
 

@@ -7,8 +7,9 @@ build_requires:
   Test::More: 0
   Test::Requires: 0.02
 configure_requires:
-  Module::Build: 0.36
-generated_by: 'Module::Build version 0.3607'
+  Module::Build: 0.31
+dynamic_config: 0
+generated_by: 'Module::Build version 0.38, CPAN::Meta::Converter version 2.112150'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -22,10 +23,11 @@ no_index:
 provides:
   WWW::USF::WebAuth:
     file: lib/WWW/USF/WebAuth.pm
-    version: 0.003
+    version: 0.003001
 requires:
   Authen::CAS::External: 0.05
-  Moose: 0.89
+  LWP::Protocol::https: 0
+  Moose: 1.03
   MooseX::Aliases: 0.05
   MooseX::StrictConstructor: 0.09
   MooseX::Types: 0.08
@@ -35,4 +37,4 @@ resources:
   homepage: http://github.com/dougwilson/perl5-www-usf-webauth/
   license: http://dev.perl.org/licenses/
   repository: git://github.com/dougwilson/perl5-www-usf-webauth.git
-version: 0.003
+version: 0.003001
